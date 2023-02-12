@@ -51,6 +51,7 @@
     &__containter {
       display: flex;
     }
+
     &__list {
       list-style: none;
       display: flex;
@@ -59,6 +60,7 @@
       padding-left: 0px;
       margin: 0;
     }
+
     &__link {
       color: $main-black;
       text-decoration: none;
@@ -79,6 +81,7 @@
       gap: 32px;
       padding-bottom: 64px;
     }
+
     &__tel {
       text-decoration: none;
       font-weight: 500;
@@ -105,11 +108,13 @@
       letter-spacing: 0.02em;
       color: $light-blue;
     }
+
     &__socials {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
     }
+    
     &__line {
       width: 22px;
       height: 0px;

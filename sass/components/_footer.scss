@@ -1,20 +1,156 @@
 .footer {
+  background-color: $background-dark;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0px;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    align-items: center;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 20px;
+    font-style: normal;
+    align-items: center;
+  }
+
+  &__address-physical {
+    font-size: 14px;
+    line-height: 1.71;
+    color: $text-white;
+    letter-spacing: 0.03em;
+  }
+
+  &__address-item {
+    font-size: 14px;
+    line-height: 1.71;
+    color: $address-color;
+    text-decoration: none;
+    display: block;
+    letter-spacing: 0.03em;
+    width: fit-content;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+      color: $light-blue;
+    }
+  }
+  
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    fill: $icon-grey;
+    align-items: center;
+    padding-bottom: 60px;
+  }
+
+  &__socials-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.142;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $text-white;
+    margin: 0px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__form-label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.142;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $text-white;
+    padding-bottom: 20px;
+  }
+
+  &__form-clickable {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__form-clickable-input {
+    padding: 15px 16px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: $background-dark;
+    &::placeholder {
+      font-size: 16px;
+      line-height: 1.25;
+      align-items: center;
+      letter-spacing: 0.03em;
+      color: rgba(255, 255, 255, 0.6);
+      opacity: 1;
+    }
+  }
+
+  &__form-clickable-button {
+    background: $light-blue;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: 0px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: $text-white;
+    gap: 24px;
+    padding: 10px 26px 10px 42px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__form-clickable-button-svg {
+    fill: $text-white;
+  }
+}
+
+@include tablet {
+  .footer {
     background-color: $background-dark;
   
     &__wrapper {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      flex-direction: row;
       align-items: center;
-      padding: 60px 0px;
-      max-width: 1170px;
-      margin: 0 auto;
+      padding: 60px 74px 60px 61px;
+      justify-content: space-between;
     }
+
     &__left {
       display: flex;
       flex-direction: column;
       padding-bottom: 60px;
       align-items: center;
     }
+  
     &__address {
       display: flex;
       flex-direction: column;
@@ -23,16 +159,18 @@
       font-style: normal;
       align-items: center;
     }
-    &__address-item {
+  
+    &__address-physical {
       font-size: 14px;
       line-height: 1.71;
       color: $text-white;
       letter-spacing: 0.03em;
     }
-    &__address-contact {
+  
+    &__address-item {
       font-size: 14px;
       line-height: 1.71;
-      color: $addres-color;
+      color: $address-color;
       text-decoration: none;
       display: block;
       letter-spacing: 0.03em;
@@ -43,9 +181,7 @@
         color: $light-blue;
       }
     }
-    &__address-contact--underline {
-      text-decoration: underline;
-    }
+    
     &__socials {
       display: flex;
       flex-direction: column;
@@ -81,6 +217,7 @@
       color: $text-white;
       padding-bottom: 20px;
     }
+  
     &__form-clickable {
       gap: 20px;
       display: flex;
@@ -88,6 +225,7 @@
       flex-direction: column;
       width: 100%;
     }
+  
     &__form-clickable-input {
       padding: 15px 16px;
       width: 100%;
@@ -104,6 +242,7 @@
         opacity: 1;
       }
     }
+  
     &__form-clickable-button {
       background: $light-blue;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -121,265 +260,141 @@
       padding: 10px 26px 10px 42px;
       transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
+    
     &__form-clickable-button-svg {
       fill: $text-white;
     }
   }
+}
+
+@include desktop {
+  .footer {
+    background-color: $background-dark;
   
-  @include tablet {
-    .footer {
-      background-color: $background-dark;
-      &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        padding: 60px 74px 60px 61px;
-        justify-content: space-between;
-      }
-      &__left {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 60px;
-        align-items: center;
-      }
-      &__address {
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-        padding-top: 20px;
-        font-style: normal;
-        align-items: center;
-      }
-      &__address-item {
-        font-size: 14px;
-        line-height: 1.71;
-        color: $text-white;
-        letter-spacing: 0.03em;
-      }
-      &__address-contact {
-        font-size: 14px;
-        line-height: 1.71;
-        color: $addres-color;
-        text-decoration: none;
-        display: block;
-        letter-spacing: 0.03em;
-        width: fit-content;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        &:hover,
-        &:focus {
-          color: $light-blue;
-        }
-      }
-      &__address-contact--underline {
-        text-decoration: underline;
-      }
-      &__socials {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        fill: $icon-grey;
-        align-items: center;
-        padding-bottom: 60px;
-      }
+    &__wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 60px 0px;
+      align-items: center;
+      max-width: 1170px;
+      margin: 0 auto;
+    }
+
+    &__left {
+      display: flex;
+      align-items: self-start;
+      padding: 0;
+    }
   
-      &__socials-text {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.142;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: $text-white;
-        margin: 0px;
-      }
+    &__address {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding-top: 20px;
+      min-width: 246px;
+    }
   
-      &__form {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-      }
+    &__address-physical {
+      font-size: 14px;
+      line-height: 1.71;
+      color: $text-white;
+      letter-spacing: 0.03em;
+    }
   
-      &__form-label {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.142;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: $text-white;
-        padding-bottom: 20px;
-      }
-      &__form-clickable {
-        gap: 20px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-      }
-      &__form-clickable-input {
-        padding: 15px 16px;
-        width: 450px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-        border-radius: 4px;
-        background-color: $background-dark;
-        &::placeholder {
-          font-size: 16px;
-          line-height: 1.25;
-          align-items: center;
-          letter-spacing: 0.03em;
-          color: rgba(255, 255, 255, 0.6);
-          opacity: 1;
-        }
-      }
-      &__form-clickable-button {
-        background: $light-blue;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 4px;
-        border: 0px;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.88;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.06em;
-        color: $text-white;
-        gap: 24px;
-        padding: 10px 26px 10px 42px;
-        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      &__form-clickable-button-svg {
-        fill: $text-white;
+    &__address-item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.69;
+      letter-spacing: 0.03em;
+      color: $address-color;
+      text-decoration: none;
+      width: fit-content;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      &:hover,
+      &:focus {
+        color: $light-blue;
       }
     }
-  }
+    
+    &__socials {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      fill: $icon-grey;
+      padding-bottom: 0;
+      padding-top: 12px;
+      padding-left: 70px;
+    }
   
-  @include desktop {
-    .footer {
+    &__socials-text {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.142;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: $text-white;
+      margin: 0px;
+    }
+  
+    &__form {
+      display: flex;
+      align-items: flex-start;
+      padding-left: 78;
+    }
+  
+    &__form-label {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.142;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: $text-white;
+      padding-bottom: 20px;
+    }
+  
+    &__form-clickable {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+  
+    &__form-clickable-input {
+      padding: 15px 0px 15px 16px;
+      width: 358px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+      border-radius: 4px;
       background-color: $background-dark;
-      &__wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-        padding: 60px 0px;
-        align-items: center;
-        max-width: 1170px;
-        margin: 0 auto;
-      }
-      &__left {
-        display: flex;
-        align-items: flex-start;
-        padding: 0;
-      }
-      &__address {
-        display: flex;
-        align-items: flex-start;
-  
-        gap: 9px;
-        padding-top: 20px;
-        font-style: normal;
-        min-width: 246px;
-      }
-      &__address-item {
-        font-size: 14px;
-        line-height: 1.71;
-        color: $text-white;
-        letter-spacing: 0.03em;
-      }
-      &__address-contact {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.69;
-        letter-spacing: 0.03em;
-        color: $addres-color;
-        text-decoration: none;
-        width: fit-content;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-  
-        &:hover,
-        &:focus {
-          color: $light-blue;
-        }
-      }
-      &__address-contact--underline {
-        text-decoration: underline;
-      }
-      &__socials {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        fill: $icon-grey;
-        padding-bottom: 0;
-        padding-top: 12px;
-        padding-left: 70px;
-      }
-  
-      &__socials-text {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.142;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: $text-white;
-        margin: 0px;
-      }
-  
-      &__form {
-        display: flex;
-        align-items: flex-start;
-        padding-left: 78px;
-      }
-  
-      &__form-label {
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 1.142;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: $text-white;
-        padding-bottom: 20px;
-      }
-      &__form-clickable {
-        display: flex;
-        gap: 12px;
-        flex-direction: row;
-      }
-      &__form-clickable-input {
-        padding: 15px 0px 15px 16px;
-        width: 358px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-        border-radius: 4px;
-        background-color: $background-dark;
-        &::placeholder {
-          font-size: 16px;
-          line-height: 1.25;
-          align-items: center;
-          letter-spacing: 0.03em;
-          color: rgba(255, 255, 255, 0.6);
-          opacity: 1;
-        }
-      }
-      &__form-clickable-button {
-        background: $light-blue;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 4px;
-        border: 0px;
-        font-weight: 700;
+      &::placeholder {
         font-size: 16px;
-        line-height: 1.88;
-        display: flex;
+        line-height: 1.25;
         align-items: center;
-        text-align: center;
-        letter-spacing: 0.06em;
-        color: $text-white;
-  
-        padding: 10px 26px 10px 42px;
-        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      &__form-clickable-button-svg {
-        fill: $text-white;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.6);
+        opacity: 1;
       }
     }
+  
+    &__form-clickable-button {
+      background: $light-blue;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      border: 0px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.88;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: $text-white;
+      padding: 10px 26px 10px 42px;
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    &__form-clickable-button-svg {
+      fill: $text-white;
+    }
   }
+}
