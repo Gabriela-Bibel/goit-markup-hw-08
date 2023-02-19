@@ -10,14 +10,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
     />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container header__wrapper">
+    <header class="header container">
           <nav class="header__nav">
             <a href="./index.html" class="logo">Web<span class="logo--black">Studio</span> </a>
             <button
@@ -38,26 +37,26 @@
           </button>
             <ul class="header__nav-list">
               <li>
-                <a class="header__nav-link header__nav-link--active" href="./index.html">Agencja</a>
+                <a class="header__nav-item header__nav-item--active" href="./index.html">Agencja</a>
               </li>
               <li>
-                <a class="header__nav-link" href="portfolio.html">Portfolio</a>
+                <a class="header__nav-item" href="portfolio.html">Portfolio</a>
               </li>
               <li>
-                <a class="header__nav-link" href="">Kontakt</a>
+                <a class="header__nav-item" href="">Kontakt</a>
               </li>
             </ul>
           </nav>
           <div class="header__contacts">
             <a class="header__contacts-item" href="mailto:info@devstudio.com">
-              <svg class="header__contacts-icon" width="16" height="12">
+              <svg class="header__contacts-item-icon-mail" width="16" height="12">
                 <use href="./images/icons.svg#icon-envelope"></use>
               </svg>
               info@devstudio.com
             </a>
 
             <a class="header__contacts-item" href="tel:+48111111111">
-              <svg class="header__contacts-icon" width="10" height="16">
+              <svg class="header__contacts-item-icon-tel" width="10" height="16">
                 <use href="./images/icons.svg#icon-smartphone"></use>
               </svg>
               +48 111 111 111
@@ -66,13 +65,14 @@
       </div>
     </header>
     <main>
-      <section class="offer">
-        <div class="container offer__content">
+      <div class="background">
+        <section class="offer">
+          <div class="container offer__content">
             <h1 class="offer__title">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-            <button class="offer__button" type="button" data-modal-open>Zamów usługę</button>
-          
-        </div>
-      </section>
+            <button class="offer__button" type="button" data-modal-open>Zamów usługe</button>
+          </div>
+        </section>
+      </div>
       <section class="section">
         <div class="container">
           <ul class="articles">
